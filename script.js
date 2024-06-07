@@ -45,6 +45,10 @@ const fromInfo = document.querySelector(".fromInfo")
    function getExchangeRate(){
     let resultedValue;
     let url = `https://v6.exchangerate-api.com/v6/4439cc18d0f66e2e1aa92d31/latest/${select.value}`
+    let amountVal = inputValue.value
+    if(amountVal === " " || amountVal === 0){
+        amountVal = 1
+    }
     fetch(url)
     .then(response=>
         response.json()
@@ -53,8 +57,9 @@ const fromInfo = document.querySelector(".fromInfo")
         console.log(data)
         let exchange = data.conversion_rates[select2.value]
         console.log(exchange , inputValue.value)
-        resultedValue = Number(inputValue.value) * exchange
-        console.log(resultedValue)
+        let resulteValue = Number(inputValue.value) * exchange
+        resultedValue = resulteValue.toFixed(2)
+        
     })
     .finally(()=>{
         fromInfo.innerHTML = `${inputValue.value} ${select.value}`
