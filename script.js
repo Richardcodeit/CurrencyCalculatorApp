@@ -47,7 +47,7 @@ const fromInfo = document.querySelector(".fromInfo")
     let url = `https://v6.exchangerate-api.com/v6/4439cc18d0f66e2e1aa92d31/latest/${select.value}`
     let amountVal = inputValue.value
     if(amountVal === " " || amountVal === 0){
-        amountVal = 1
+        amountVal === 1
     }
     fetch(url)
     .then(response=>
@@ -59,10 +59,16 @@ const fromInfo = document.querySelector(".fromInfo")
         console.log(exchange , inputValue.value)
         let resulteValue = Number(inputValue.value) * exchange
         resultedValue = resulteValue.toFixed(2)
-        
-    })
-    .finally(()=>{
         fromInfo.innerHTML = `${inputValue.value} ${select.value}`
         toInfo.innerHTML = `${select2.value} is equivalent to ${resultedValue}`
     })
+    .catch((err)=>{
+        if(err){
+            toInfo.innerHTML = "There is no internent conncetion my guuy"
+            fromInfo.innerHTML = " "
+        }
+    })
+    // .finally(()=>{
+        
+    // })
    }

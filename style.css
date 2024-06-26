@@ -1,0 +1,90 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  max-width: 450px;
+  margin-top: 30vh;
+  border: 2px solid orange;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(255, 145, 0);
+  opacity: 50%;
+  z-index: -2;
+  border-radius: 20px;
+}
+.container p {
+  text-align: center;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputs .amount {
+ margin: 0 auto;
+}
+.inputs .amount-input {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.countrysInput {
+  margin-top: 100px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+}
+.countrysInput select {
+  width: 60px;
+  height: 25px;
+  padding: 5px;
+}
+.countrysInput .country {
+  display: flex;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px ;
+}
+.countrysInput img {
+  width: 30px;
+  height: 24px;
+}
+.amount-value {
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+}
+.button {
+ margin: 0 auto;
+}
+.button button {
+ width: 100px;
+ height: 30px;
+ background-color: brown;
+ border: none;
+ border-radius: 10px;
+ color: white;
+}
